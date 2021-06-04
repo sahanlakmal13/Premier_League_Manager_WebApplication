@@ -1,0 +1,173 @@
+<div style="text-align:center;">
+  <br>
+  <h1>2019/20 Premier League Table</h1>
+  <br>
+  <table style="border-style: solid;" class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Matches Played</th>
+        <th>Wins</th>
+        <th>Draws</th>
+        <th>Defeats</th> 
+        <th>Scored Goals</th>
+        <th>Received Goals</th>
+        <th>Goal Difference</th>
+        <th>Club Points</th>
+      </tr>
+    </thead>
+
+    <tr *ngFor='let fc of w1790286FootBallClubList'>
+      <td>{{fc.w1790286ClubName}}</td>
+      <td>{{fc.w1790286ClubLocation}}</td>
+      <td>{{fc.w1790286NumOfPlayedMatches}}</td>
+      <td>{{fc.w1790286Wins}}</td>
+      <td>{{fc.w1790286Draws}}</td>
+      <td>{{fc.w1790286Defeats}}</td>
+      <td>{{fc.w1790286ScoredGoals}}</td>
+      <td>{{fc.w1790286ReceivedGoals}}</td>
+      <td>{{fc.w1790286GoalDifference}}</td>
+      <td>{{fc.w1790286ClubPoints}}</td>
+    </tr>
+    
+  </table>
+  <br>
+  <hr>
+  <br>
+
+  <h2>Last Generated Match</h2>
+  <table style="border-style: solid;" class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>1st Club</th>
+        <th>2nd Club</th>
+        <th>1st Club Goals</th>
+        <th>2nd Club Goals</th>
+        <th>Date</th>   
+      </tr>
+    </thead>
+
+    <tr>
+      <td>{{w1790286Ranclub1Name}}</td>
+      <td>{{w1790286Ranclub2Name}}</td>
+      <td>{{w1790286Ranclub1Score}}</td>
+      <td>{{w1790286Ranclub2Score}}</td>
+      <td>{{w1790286RanmatchDate.w1790286Day}}/{{w1790286RanmatchDate.w1790286Month}}/{{w1790286RanmatchDate.w1790286Year}}</td>
+    </tr>
+  </table>
+
+  <button (click)='sortByScoredGoals()' class="btn btn-primary" data-toggle="button" aria-pressed="false"> Sort by Scored Goals</button>
+  <br>
+  <br>
+  <button (click)='sortByWins()' class="btn btn-primary" data-toggle="button" aria-pressed="false"> Sort by Wins</button>
+  <br>
+  <br>
+  <button (click)='generateMatch()' class="btn btn-primary" data-toggle="button" aria-pressed="false"> Random Match</button>
+  <br>
+  <hr>
+  <br>
+  <h2>Match Table</h2>
+  <table style="border-style: solid;" class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>1st Club</th>
+        <th>2nd Club</th>
+        <th>1st Club Goals</th>
+        <th>2nd Club Goals</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+
+    <tr *ngFor='let m of w1790286MatchList'>
+      <td>{{m.w1790286Club1Name}}</td>
+      <td>{{m.w1790286Club2Name}}</td>
+      <td>{{m.w1790286Club1Score}}</td>
+      <td>{{m.w1790286Club2Score}}</td>
+      <td>{{m.w1790286MatchDate.w1790286Day}}/{{m.w1790286MatchDate.w1790286Month}}/{{m.w1790286MatchDate.w1790286Year}}</td>
+    </tr>
+  </table>
+  <br>
+  <hr>
+  <br>
+
+    <select id="searchDate" name="searchDate">
+      <option value="" disabled selected>Date</option>
+      <option value="1">1
+      <option value="2">2
+      <option value="3">3
+      <option value="4">4
+      <option value="5">5
+      <option value="6">6
+      <option value="7">7
+      <option value="8">8
+      <option value="9">9
+      <option value="10">10
+      <option value="11">11
+      <option value="12">12
+      <option value="13">13
+      <option value="14">14
+      <option value="15">15
+      <option value="16">16
+      <option value="17">17
+      <option value="18">18
+      <option value="19">19
+      <option value="20">20
+      <option value="21">21
+      <option value="22">22
+      <option value="23">23
+      <option value="24">24
+      <option value="25">25
+      <option value="26">26
+      <option value="27">27
+      <option value="28">28
+      <option value="29">29
+      <option value="30">30
+      <option value="31">31 
+    </select>
+    
+    <select id="searchMonth">
+      <option value="" disabled selected>Month</option>
+      <option value="1">1
+      <option value="2">2
+      <option value="3">3
+      <option value="4">4
+      <option value="5">5
+      <option value="6">6
+      <option value="7">7
+      <option value="8">8
+      <option value="9">9
+      <option value="10">10
+      <option value="11">11
+      <option value="12">12
+    </select>
+
+    <select id="searchYear">
+      <option value="" disabled selected>Year</option>
+      <option value="2019">2019
+        <option value="2020">2020
+    </select>
+    
+
+    <button (click)='searchByDate()' class="btn btn-primary" data-toggle="button" aria-pressed="false">Search Match</button>
+    <h2>Searched Match</h2>
+    <table style="border-style: solid;" class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>1st Club</th>
+          <th>2nd Club</th>
+          <th>1st Club Goals</th>
+          <th>2nd Club Goals</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+
+      <tr *ngFor='let sm of w1790286SearchMatchListFinal'>
+        <td>{{sm.w1790286Club1Name}}</td>
+        <td>{{sm.w1790286Club2Name}}</td>
+        <td>{{sm.w1790286Club1Score}}</td>
+        <td>{{sm.w1790286Club2Score}}</td>
+        <td>{{sm.w1790286MatchDate.w1790286Day}}/{{sm.w1790286MatchDate.w1790286Month}}/{{sm.w1790286MatchDate.w1790286Year}}</td>
+      </tr>
+    </table>
+</div>
